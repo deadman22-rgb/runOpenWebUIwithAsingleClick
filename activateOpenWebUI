@@ -1,0 +1,10 @@
+@echo off
+cd /d path/to/your/virtual/env
+call Scripts\activate
+start "" /B cmd /c "open-webui serve"
+
+:: Wait for OpenWebUI to start (adjust timeout if needed)
+timeout /t 15 /nobreak >nul
+
+:: Open OpenWebUI in the default browser
+start http://127.0.0.1:8080/
